@@ -5,7 +5,7 @@ export interface ILocation {
   lng: number;
 }
 
-export interface IRestaurant {
+export type TRestaurant = {
   name: string;
   description?: string;
   isOpen: boolean;

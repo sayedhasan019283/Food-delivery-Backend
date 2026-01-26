@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { IRestaurant } from "./restaurant.interface";
+import { TRestaurant } from "./restaurant.interface";
 
 const locationSchema = new Schema(
   {
@@ -9,7 +9,7 @@ const locationSchema = new Schema(
   { _id: false }
 );
 
-const restaurantSchema = new Schema<IRestaurant>(
+const restaurantSchema = new Schema<TRestaurant>(
   {
     name: {
       type: String,
@@ -52,7 +52,7 @@ const restaurantSchema = new Schema<IRestaurant>(
   }
 );
 
-export const RestaurantModel = model<IRestaurant>(
+export const RestaurantModel = model<TRestaurant>(
   "Restaurant",
   restaurantSchema
 );
