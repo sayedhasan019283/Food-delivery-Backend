@@ -14,6 +14,7 @@ const createRestaurantController = catchAsync(async (req : Request, res : Respon
 });
 
 const readRestaurantController = catchAsync(async (req : Request, res : Response, next : NextFunction) => {
+  // Controller logic here
   const result = await RestaurantService.readRestaurantService();
   res.status(200).json({
     success: true,
@@ -23,6 +24,7 @@ const readRestaurantController = catchAsync(async (req : Request, res : Response
 });
 
 const updateRestaurantController = catchAsync(async (req : Request, res : Response, next : NextFunction) => {
+  // Controller logic here
   const id = req.params.id;
   const payload = req.body;
   const result = await RestaurantService.updateRestaurantService(id, payload);
@@ -33,6 +35,7 @@ const updateRestaurantController = catchAsync(async (req : Request, res : Respon
   });
 });
 const deleteRestaurantController = catchAsync(async (req : Request, res : Response, next : NextFunction) => {
+  // Controller logic here
   const id = req.params.id;
   const result = await RestaurantService.deleteRestaurantService(id); 
   res.status(200).json({
@@ -42,6 +45,7 @@ const deleteRestaurantController = catchAsync(async (req : Request, res : Respon
   });
 });
 const getRestaurantByIdController = catchAsync(async (req : Request, res : Response, next : NextFunction) => {
+  // Controller logic here
   const id = req.params.id;
   const result = await RestaurantService.getSingleRestaurantByIdService(id);
   res.status(200).json({
