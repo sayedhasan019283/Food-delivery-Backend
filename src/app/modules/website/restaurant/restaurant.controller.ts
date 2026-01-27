@@ -13,6 +13,48 @@ const createRestaurantController = catchAsync(async (req : Request, res : Respon
   });
 });
 
+const readRestaurantController = catchAsync(async (req : Request, res : Response, next : NextFunction) => {
+  const result = await RestaurantService.readRestaurantService();
+  res.status(200).json({
+    success: true,
+    message: "Restaurants retrieved successfully",
+    data: result,
+  });
+});
+
+const updateRestaurantController = catchAsync(async (req : Request, res : Response, next : NextFunction) => {
+  const id = req.params.id;
+  const payload = req.body;
+  const result = await RestaurantService.updateRestaurantService(id, payload);
+  res.status(200).json({
+    success: true,
+    message: "Restaurant updated successfully",
+    data: result,
+  });
+});
+const deleteRestaurantController = catchAsync(async (req : Request, res : Response, next : NextFunction) => {
+  const id = req.params.id;
+  const result = await RestaurantService.deleteRestaurantService(id); 
+  res.status(200).json({
+    success: true,
+    message: "Restaurant deleted successfully",
+    data: result,
+  });
+});
+const getRestaurantByIdController = catchAsync(async (req : Request, res : Response, next : NextFunction) => {
+  const id = req.params.id;
+  const result = await RestaurantService.getSingleRestaurantByIdService(id);
+  res.status(200).json({
+    success: true,
+    message: "Restaurant retrieved successfully",
+    data: result,
+  });
+});
+
 export const RestaurantController = {
   createRestaurantController,
+  readRestaurantController,
+  updateRestaurantController,
+  deleteRestaurantController,
+  getRestaurantByIdController,
 };

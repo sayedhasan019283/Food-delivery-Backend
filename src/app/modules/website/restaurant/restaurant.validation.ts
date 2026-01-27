@@ -17,3 +17,22 @@ export const createRestaurantSchema = z.object({
     closeTime: z.string().regex(timeRegex, "Invalid time format (HH:mm)"),
   }),
 });
+
+export const updateRestaurantSchema = z.object({
+  body: z.object({
+    name: z.string().min(1).optional(),
+    description: z.string().optional(),
+    isOpen: z.boolean().optional(),
+    ownerId: z.string().optional(),
+    location: z
+      .object({
+        lat: z.number().optional(),
+        lng: z.number().optional(),
+      })
+      .optional(),
+    avgDeliveryTime: z.number().int().positive().optional(),
+    openTime: z.string().regex(timeRegex).optional(),
+    closeTime: z.string().regex(timeRegex).optional(),
+  }),
+});
+
