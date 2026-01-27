@@ -29,7 +29,7 @@ const getSingleRestaurantByIdService = async (id : string) => {
     const result = await RestaurantModel.findById(id);
     return result;
 };
-
+// exporting all services as object
 export const RestaurantService = {
     createRestaurantService,
     readRestaurantService,
