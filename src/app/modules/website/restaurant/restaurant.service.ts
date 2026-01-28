@@ -1,6 +1,7 @@
 import { TRestaurant } from "./restaurant.interface";
 import { RestaurantModel } from "./restaurant.model";
 
+// controller services for restaurant module
 const createRestaurantService = async (payload : TRestaurant ) => {
     // Implementation of restaurant service creation
     const result = await RestaurantModel.create(payload);
