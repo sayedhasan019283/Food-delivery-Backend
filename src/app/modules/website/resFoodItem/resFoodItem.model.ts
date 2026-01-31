@@ -9,11 +9,6 @@ const menuItemSchema = new Schema<TMenuItem>(
       ref: "Restaurant",
       required: true,
     },
-    categoryId: {
-      type: Schema.Types.ObjectId,
-      ref: "Category",
-      required: true,
-    },
     name: {
       type: String,
       required: true,
