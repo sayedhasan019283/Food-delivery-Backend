@@ -14,6 +14,7 @@ const createFoodItemController = catchAsync(async (req : Request, res : Response
 });
 
 const readAllFoodItemController = catchAsync(async (req : Request, res : Response, next : NextFunction) => {
+  // Controller logic for reading all food items goes here
     const result = await ResFoodItemService.readAllFoodItemService();
     res.status(200).json({
       success: true,
@@ -23,6 +24,7 @@ const readAllFoodItemController = catchAsync(async (req : Request, res : Respons
 });
 
 const getSingleFoodItemController = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+  // Controller logic for getting a single food item goes here
   const { id } = req.params;
   const result = await ResFoodItemService.getSingleFoodItemService(id);
   res.status(200).json({
@@ -32,6 +34,7 @@ const getSingleFoodItemController = catchAsync(async (req: Request, res: Respons
   });
 });
 const updateFoodItemController = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+   // Controller logic for updating a food item goes here
   const { id } = req.params;
   const payload = req.body; 
   const result = await ResFoodItemService.updateFoodItemService(id, payload);
@@ -43,6 +46,7 @@ const updateFoodItemController = catchAsync(async (req: Request, res: Response, 
 });
 
 const deleteFoodItemController = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+   // Controller logic for deleting a food item goes here
   const { id } = req.params;
   const result = await ResFoodItemService.deleteFoodItemService(id);
   res.status(200).json({
