@@ -19,7 +19,7 @@ router.post(
     RestaurantController.readRestaurantController
  )
 
- router.put(
+ router.patch(
     '/update-restaurant/:id',
     auth('common'),
     validateRequest(updateRestaurantSchema),

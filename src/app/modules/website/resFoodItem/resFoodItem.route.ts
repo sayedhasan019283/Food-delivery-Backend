@@ -11,5 +11,28 @@ router.post(
   validateRequest(createMenuItemSchema),
   ResFoodItemController.createFoodItemController
 );
+router.get(
+  "/get-food-items",
+  auth("common"),
+  ResFoodItemController.readAllFoodItemController
+);
 
+router.get(
+  "/get-food-item/:id",
+  auth("common"),
+  ResFoodItemController.getSingleFoodItemController
+);
+
+router.patch(
+  "/update-food-item/:id",
+  auth("common"),
+  validateRequest(createMenuItemSchema),
+  ResFoodItemController.updateFoodItemController
+);
+
+router.delete(
+  "/delete-food-item/:id",
+  auth("common"),
+  ResFoodItemController.deleteFoodItemController
+);
 export const ResFoodItemRoutes = router;
