@@ -1,3 +1,4 @@
+import { *asadmin } from 'firebase-admin';
 import { NextFunction, Request, Response } from "express";
 import catchAsync from "../../../../shared/catchAsync";
 import { ResFoodItemService } from "./resFoodItem.service";
@@ -55,6 +56,7 @@ const deleteFoodItemController = catchAsync(async (req: Request, res: Response, 
     data: result,
   });
 });
+// export controller functions as an object
 export const ResFoodItemController = {
     createFoodItemController,
     readAllFoodItemController,
