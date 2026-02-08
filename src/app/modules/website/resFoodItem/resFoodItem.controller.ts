@@ -1,4 +1,3 @@
-import { *asadmin } from 'firebase-admin';
 import { NextFunction, Request, Response } from "express";
 import catchAsync from "../../../../shared/catchAsync";
 import { ResFoodItemService } from "./resFoodItem.service";
